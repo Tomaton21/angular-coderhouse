@@ -1,0 +1,27 @@
+<div class="grid gap-4 grid-cols-1">
+    <div>
+        <h1>Tabla alumnos</h1>
+    </div>
+    <div>
+        <table class="table-auto border-collapse border border-slate-400" >
+            <thead>
+              <tr>
+                <th class="border border-slate-300">Nombre</th>
+                <th class="border border-slate-300">Apellido</th>
+                <th class="border border-slate-300">Activo</th>
+              </tr>
+            </thead>
+            <tbody id="tablaB">
+                <tr *ngFor="let Arrayalumnos of Arrayalumnos">
+                    <td class="border border-slate-300">{{Arrayalumnos.nombre}}</td>
+                    <td class="border border-slate-300">{{Arrayalumnos.apellido}}</td>
+                    <td class="border border-slate-300">{{Arrayalumnos.activo}}</td>
+                    <td *ngIf="Arrayalumnos.activo; else elseBlock" class="border border-slate-300">
+                        <button>Desactivar</button>                        
+                     </td>                     
+                     <ng-template #elseBlock><td class="border border-slate-300"><button>Activar</button></td></ng-template>
+                </tr>
+            </tbody>
+          </table>
+    </div>
+  </div>
