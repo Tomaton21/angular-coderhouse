@@ -1,1 +1,34 @@
+<h1 class="display-1 text-center">Registrar Usuario</h1>
+<br>
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div class="form-group form-floating">
+        <input type="text" name="username" class="form-control" id="username" [(ngModel)]="usuarioModel.username"  formControlName="username">
+        <label for="username">Usuario</label>        
+        <span class="text-red-600" *ngIf="this.formulario.get('username')?.errors?.['required']">(El nombre de usuario esta vacio)</span>
+        <span class="text-red-600" *ngIf="this.formulario.get('username')?.errors?.['minlength']">(Minimo 3 caracteres)</span>
 
+    </div>
+    <div class="form-group form-floating" id="divPassword">
+        <input type="password" name="password" class="form-control" [(ngModel)]="usuarioModel.password" id="password" formControlName="password">
+        <label for="password">Contraseña</label>
+        <span class="text-red-600" *ngIf="this.formulario.get('password')?.errors?.['required']">(La contraseña esta vacia)</span>
+        <span class="text-red-600" *ngIf="this.formulario.get('password')?.errors?.['minlength']">(Minimo 8 caracteres)</span>
+    </div>
+    <div class="form-group form-floating">
+        <input type="text" name="Nombre" class="form-control" id="Nombre" [(ngModel)]="usuarioModel.nombre"  formControlName="nombre">
+        <label for="Nombre">Nombre</label>        
+        <span class="text-red-600" *ngIf="this.formulario.get('nombre')?.errors?.['required']">(El nombre esta vacio)</span>
+
+    </div>
+    <div class="form-group form-floating">
+        <input type="text" name="Apellido" class="form-control" [(ngModel)]="usuarioModel.apellido" id="apellido" formControlName="apellido">
+        <label for="apellido">Apellido</label>
+        <span class="text-red-600" *ngIf="this.formulario.get('apellido')?.errors?.['required']">(El apellido esta vacio)</span>
+    </div>
+    <div class="form-group form-floating">
+        <input type="email" name="email" class="form-control" id="email" [(ngModel)]="usuarioModel.email"  formControlName="email">
+        <label for="email">Email</label>        
+        <span class="text-red-600" *ngIf="this.formulario.get('email')?.errors?.['required']">(El email esta vacio)</span>
+    </div>
+    <button class="btn bg-green-400"type="submit">Registrar usuario</button>
+</form>
