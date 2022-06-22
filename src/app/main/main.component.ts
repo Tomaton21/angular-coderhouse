@@ -13,7 +13,7 @@ export class MainComponent implements OnInit {
  
   usuarioModel: Usuario = new Usuario('','','','','')
   formulario = this.fb.group({
-      username: ['',[Validators.required], Validators.minLength(3)],
+      username: ['',[Validators.required, Validators.minLength(3)]],
       password: ['',[Validators.required, Validators.minLength(8)]],
       nombre: ['',[Validators.required]],
       apellido: ['',[Validators.required]],

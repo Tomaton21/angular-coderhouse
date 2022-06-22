@@ -15,13 +15,13 @@
         <span class="text-red-600" *ngIf="this.formulario.get('password')?.errors?.['minlength']">(Minimo 8 caracteres)</span>
     </div>
     <div class="form-group form-floating">
-        <input type="text" name="Nombre" class="form-control" id="Nombre" [(ngModel)]="usuarioModel.nombre"  formControlName="nombre">
+        <input type="text" name="nombre" class="form-control" id="nombre" [(ngModel)]="usuarioModel.nombre"  formControlName="nombre">
         <label for="Nombre">Nombre</label>        
         <span class="text-red-600" *ngIf="this.formulario.get('nombre')?.errors?.['required']">(El nombre esta vacio)</span>
 
     </div>
     <div class="form-group form-floating">
-        <input type="text" name="Apellido" class="form-control" [(ngModel)]="usuarioModel.apellido" id="apellido" formControlName="apellido">
+        <input type="text" name="apellido" class="form-control" [(ngModel)]="usuarioModel.apellido" id="apellido" formControlName="apellido">
         <label for="apellido">Apellido</label>
         <span class="text-red-600" *ngIf="this.formulario.get('apellido')?.errors?.['required']">(El apellido esta vacio)</span>
     </div>
