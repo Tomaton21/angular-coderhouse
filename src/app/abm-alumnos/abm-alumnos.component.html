@@ -1,0 +1,27 @@
+
+<mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color">
+  <mat-button-toggle value="Crear">Crear</mat-button-toggle>
+  <mat-button-toggle value="Eliminar">Eliminar</mat-button-toggle>
+</mat-button-toggle-group>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let element"> {{element.id}}</td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef>Nombre</th>
+      <td mat-cell *matCellDef="let element"> {{element.nombre|nombreCompletoPipe:element.apellido}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  

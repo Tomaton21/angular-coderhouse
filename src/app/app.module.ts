@@ -4,16 +4,30 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialFlatModule } from './modules/material-flat/material-flat.module';
+import { LoginComponent } from './login/login.component';
+import { FormUsuariosComponent } from './form-usuarios/form-usuarios.component';
+import { ABMAlumnosComponent } from './abm-alumnos/abm-alumnos.component';
+import { NombreCompletoPipePipe } from './pipes/nombre-completo-pipe.pipe';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
+    LoginComponent,
+    FormUsuariosComponent,
+    ABMAlumnosComponent,
+    NombreCompletoPipePipe,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MaterialFlatModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

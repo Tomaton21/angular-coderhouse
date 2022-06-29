@@ -1,0 +1,45 @@
+<h1 class="display-1 text-center">Registrar Usuario</h1>
+<br>
+<mat-card>
+    <form action="" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <div >
+            <mat-form-field appearance="fill">
+                <mat-label>Usuario</mat-label>
+                <input matInput placeholder="Ingresa tu usuario" id="username" [(ngModel)]="usuarioModel.username"  formControlName="username" required>
+                <mat-error *ngIf="this.formulario.get('username')?.errors?.['required']">Usuario vacio</mat-error>
+                <mat-error *ngIf="this.formulario.get('username')?.errors?.['minlength']">Minimo 3 caracteres</mat-error>
+            </mat-form-field>
+        </div>        
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Contraseña</mat-label>
+                <input matInput type="password" placeholder="Ingresa tu Contraseña" formControlName="password" required>
+                <mat-error *ngIf="this.formulario.get('password')?.errors?.['required']">Contraseña vacia</mat-error>
+                <mat-error *ngIf="this.formulario.get('password')?.errors?.['minlength']">Minimo 8 caracteres</mat-error>
+            </mat-form-field>
+            </div>
+        <div >
+            <mat-form-field appearance="fill">
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="Ingresa tu usuario" id="nombre" [(ngModel)]="usuarioModel.nombre"  formControlName="nombre" required>
+                <mat-error *ngIf="this.formulario.get('email')?.errors?.['required']">El nombre esta vacio</mat-error>
+            </mat-form-field>
+        </div>
+        <div >
+            <mat-form-field appearance="fill">
+                <mat-label>Apellido</mat-label>
+                <input matInput placeholder="Ingresa tu usuario" [(ngModel)]="usuarioModel.apellido" id="apellido" formControlName="apellido" required>
+                <mat-error *ngIf="this.formulario.get('email')?.errors?.['required']">El apellido esta vacio</mat-error>
+            </mat-form-field>
+        </div>
+        <div >
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Ingresa tu usuario" id="email" [(ngModel)]="usuarioModel.email"  formControlName="email" required>
+                <mat-error *ngIf="this.formulario.get('email')?.errors?.['required']">El email esta vacio</mat-error>
+                <mat-error *ngIf="this.formulario.get('email')?.errors?.['email']">El email es incorrecto</mat-error>
+            </mat-form-field>
+        </div>
+        <button mat-raised-button color="primary">Registrar usuario</button>
+    </form>
+</mat-card>
