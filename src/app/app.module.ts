@@ -10,8 +10,9 @@ import { LoginComponent } from './login/login.component';
 import { FormUsuariosComponent } from './form-usuarios/form-usuarios.component';
 import { ABMAlumnosComponent } from './abm-alumnos/abm-alumnos.component';
 import { NombreCompletoPipePipe } from './pipes/nombre-completo-pipe.pipe';
+import { ListadoAlumnosService } from './servicios/listado-alumnos.service';
 
-
+const instanciarServicio = new ListadoAlumnosService
 
 @NgModule({
   declarations: [
@@ -29,7 +30,9 @@ import { NombreCompletoPipePipe } from './pipes/nombre-completo-pipe.pipe';
     BrowserAnimationsModule,
     MaterialFlatModule,
   ],
-  providers: [],
+  providers: [{
+    provide: ListadoAlumnosService, useExisting: instanciarServicio
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

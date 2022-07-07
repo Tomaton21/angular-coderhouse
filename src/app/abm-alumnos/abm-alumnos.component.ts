@@ -19,6 +19,7 @@ export class ABMAlumnosComponent implements OnInit {
   
 
   displayedColumns: string[] = ['id', 'nombre'];
+  
 
   dataSource = ELEMENT_DATA;
 
