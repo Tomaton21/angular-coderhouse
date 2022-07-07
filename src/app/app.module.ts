@@ -30,9 +30,7 @@ const instanciarServicio = new ListadoAlumnosService
     BrowserAnimationsModule,
     MaterialFlatModule,
   ],
-  providers: [{
-    provide: ListadoAlumnosService, useExisting: instanciarServicio
-  }],
+  providers: [ListadoAlumnosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
