@@ -11,6 +11,7 @@ import { FormUsuariosComponent } from './form-usuarios/form-usuarios.component';
 import { ABMAlumnosComponent } from './abm-alumnos/abm-alumnos.component';
 import { NombreCompletoPipePipe } from './pipes/nombre-completo-pipe.pipe';
 import { ListadoAlumnosService } from './servicios/listado-alumnos.service';
+import { AppRoutingModule } from './app-routing.module';
 
 const instanciarServicio = new ListadoAlumnosService
 
@@ -29,6 +30,7 @@ const instanciarServicio = new ListadoAlumnosService
     FormsModule,
     BrowserAnimationsModule,
     MaterialFlatModule,
+    AppRoutingModule,
   ],
   providers: [ListadoAlumnosService],
   bootstrap: [AppComponent]
